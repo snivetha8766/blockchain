@@ -1,0 +1,97 @@
+Transaction class:
+
+  def __init__(self, sender, recipient, value): 
+ self.sender = sender 
+ self.recipient = recipient 
+ self.value = value 
+ self.time = datetime.datetime.now()
+
+First block of transaction:
+
+if self.sender == "Genesis": 
+ identity = "Genesis" 
+ else: 
+ identity = self.sender.identity
+return collections.OrderedDict({'sender': identity, 
+ 'recipient': self.recipient, 
+ 'value': self.value, 
+ 'time' : self.time})
+
+
+def to_dict(self): 
+ if self.sender == "Genesis": 
+ identity = "Genesis" 
+ else: 
+ identity = self.sender.identity 
+  
+ return collections.OrderedDict({'sender': identity, 
+ 'recipient': self.recipient, 
+'value': self.value, 
+'time' : self.time}) 
+Testing the transaction class:
+Dinesh = Client() 
+Ramesh = Client()
+t = Transaction( 
+ Dinesh, 
+ Ramesh.identity, 
+ 5.0 
+)
+For multiple transactions:
+t2 = Transaction( 
+ Dinesh, 
+ Seema.identity, 
+ 6.0 
+) 
+t2.sign_transaction() 
+transactions.append(t2) 
+t3 = Transaction( 
+ Ramesh, 
+ Vijay.identity, 
+ 2.0 
+) 
+t3.sign_transaction() 
+transactions.append(t3) 
+t4 = Transaction( 
+ Seema, 
+ Ramesh.identity, 
+ 4.0 
+) 
+t4.sign_transaction() 
+transactions.append(t4) 
+t5 = Transaction( 
+ Vijay, 
+ Seema.identity, 
+ 7.0 
+) 
+t5.sign_transaction() 
+transactions.append(t5)
+Verifying the transactions:
+self.verified_transactions = [] self.previous_block_hash = ""
+self.Nonce = ""
+class Block: 
+ def __init__(self): 
+ self.verified_transactions = [] 
+ self.previous_block_hash = "" 
+ self.Nonce = "" Displaying the length of transactions:
+def dump_blockchain (self): 
+ print ("Number of blocks in the chain: " + str(len (self))) 
+ for x in range (len(TPCoins)): 
+ block_temp = TPCoins[x]  
+ print ("block # " + str(x)) 
+ for transaction in block_temp.verified_transactions: 
+ display_transaction (transaction) 
+ print ('--------------') 
+ print ('=====================================')
+
+Display the transactions:
+def display_transaction(transaction): 
+ #for transaction in transactions: 
+ dict = transaction.to_dict() 
+ print ("sender: " + dict['sender']) 
+ print ('-----') 
+ print ("recipient: " + dict['recipient']) 
+ print ('-----') 
+ print ("value: " + str(dict['value'])) 
+ print ('-----') 
+ print ("time: " + str(dict['time'])) 
+ print ('-----') 
